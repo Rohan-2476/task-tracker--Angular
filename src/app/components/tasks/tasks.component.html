@@ -1,6 +1,11 @@
 <!-- Add Task Form component -->
 <app-add-task (onAddTask)="addTask($event)"></app-add-task>
 
+<!-- if no task found, display the msg -->
+<div [ngStyle]="{ 'text-align': 'center' }">
+  {{ tasks.length === 0 ? "No tasks found!" : "" }}
+</div>
+
 <!-- Task item component -->
 <app-task-item
   *ngFor="let task of tasks"

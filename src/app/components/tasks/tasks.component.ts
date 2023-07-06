@@ -34,6 +34,10 @@ export class TasksComponent {
   }
 
   addTask(task: Task) {
-    console.log(task);
+    if ((task.title && task.day) || task.reminder) {
+      this.taskService.addTask(task).subscribe((task) => this.tasks.push(task)); // add the task through the server and push it in the tasks array
+    } else {
+      alert('Please provide Task details!');
+    }
   }
 }

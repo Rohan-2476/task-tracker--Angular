@@ -21,6 +21,7 @@ export class AddTaskComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  // submitting the add task form
   onSubmit() {
     if (!this.title) {
       alert('Please add a Title to the task!');
