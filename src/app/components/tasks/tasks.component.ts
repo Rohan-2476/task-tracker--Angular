@@ -22,11 +22,18 @@ export class TasksComponent {
   deleteTask(task: Task) {
     // In order to use Observables, we must subscribe just like a promise('.then')
     this.taskService.deleteTask(task).subscribe(() => {
+      this.tasks = this.tasks.filter((t) => t.id !== task.id);
       // after delete task is done on the server, filter it out on the UI
       // 't' is the task that has been deleted, filter it from remaining tasks on UI
-      this.tasks = this.tasks.filter((t) => {
-        t.id !== task.id;
-      });
     });
+  }
+
+  toggleReminder(task: Task) {
+    task.reminder = !task.reminder;
+    this.taskService.updateTaskReminder(task).subscribe();
+  }
+
+  addTask(task: Task) {
+    console.log(task);
   }
 }

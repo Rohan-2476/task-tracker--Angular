@@ -10,11 +10,16 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 export class TaskItemComponent {
   @Input() task!: Task;
   @Output() onDeleteTask: EventEmitter<Task> = new EventEmitter();
+  @Output() onToggleReminder: EventEmitter<Task> = new EventEmitter();
 
   faTimes = faTimes;
 
   // Deleting a task
   onDelete(task: Task) {
     this.onDeleteTask.emit(task); // passed the task from child to parent by emitting the event
+  }
+
+  onToggle(task: Task) {
+    this.onToggleReminder.emit(task);
   }
 }
