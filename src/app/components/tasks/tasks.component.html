@@ -2,14 +2,19 @@
 <app-add-task (onAddTask)="addTask($event)"></app-add-task>
 
 <!-- if no task found, display the msg -->
-<div [ngStyle]="{ 'text-align': 'center' }">
+<div class="msg-container">
   {{ tasks.length === 0 ? "No tasks found!" : "" }}
 </div>
 
 <!-- Task item component -->
-<app-task-item
-  *ngFor="let task of tasks"
-  [task]="task"
-  (onDeleteTask)="deleteTask(task)"
-  (onToggleReminder)="toggleReminder(task)"
-></app-task-item>
+<div>
+  <fa-icon class="fa-icon" [icon]="rightArrow"></fa-icon>
+  <h3 class="list-title">Tasks</h3>
+  <hr class="divider" />
+  <app-task-item
+    *ngFor="let task of tasks"
+    [task]="task"
+    (onDeleteTask)="deleteTask(task)"
+    (onToggleReminder)="toggleReminder(task)"
+  ></app-task-item>
+</div>

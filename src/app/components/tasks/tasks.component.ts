@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TaskService } from '../../services/task.service'; // file for dealing with all the http requests
 import { Task } from '../../Task'; //  Task interface
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-tasks',
@@ -9,6 +10,7 @@ import { Task } from '../../Task'; //  Task interface
 })
 export class TasksComponent {
   tasks: Task[] = []; //  sets the property to 'interface'->Task and assigns [dummy data]->TASKS
+  rightArrow = faAngleRight;
 
   constructor(private taskService: TaskService) {}
 

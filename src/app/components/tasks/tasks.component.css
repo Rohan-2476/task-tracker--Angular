@@ -1,0 +1,17 @@
+.msg-container {
+    text-align: center;
+}
+
+.divider {
+    width: 90%;
+    margin: 2px auto 7px auto;
+}
+
+.fa-icon {
+    color: red;
+    margin-right: 5px;
+}
+
+.list-title {
+    display: inline;
+}

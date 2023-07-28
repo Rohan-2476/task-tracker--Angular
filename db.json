@@ -1,3 +1,16 @@
 {
-  "tasks": []
+  "tasks": [
+    {
+      "title": "Add edit endpoint to the App - @Self-Assessment task!",
+      "day": "2023-07-07T23:59",
+      "reminder": true,
+      "id": 2
+    },
+    {
+      "title": "Add strikethrough when marked as completed! - @Self-Assessment task!",
+      "day": "2023-07-08T18:44",
+      "reminder": true,
+      "id": 3
+    }
+  ]
 }

@@ -10,7 +10,7 @@ export class ButtonComponent implements OnInit {
 
   @Input() text!: string; // That's where the "!" comes in
   @Input() color!: string; // That's where the "!" comes in
-  @Output() btnClick = new EventEmitter();
+  @Output() btnClick: EventEmitter<any> = new EventEmitter();
 
   constructor() {}
 

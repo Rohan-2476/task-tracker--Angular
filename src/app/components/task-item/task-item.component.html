@@ -4,12 +4,24 @@
   (dblclick)="onToggle(task)"
 >
   <h3>
-    {{ task.title }}
-    <fa-icon
-      (click)="onDelete(task)"
-      [ngStyle]="{ color: 'red' }"
-      [icon]="faTimes"
-    ></fa-icon>
+    <h4 [ngClass]="{ markedDone: markedDone }">{{ task.title }}</h4>
+    <div class="icons">
+      <fa-icon
+        (click)="onDelete(task)"
+        [ngStyle]="{ color: 'red' }"
+        [icon]="faTimes"
+      ></fa-icon>
+      <fa-icon
+        (click)="onMarkedDone(task)"
+        [ngStyle]="{ color: 'red' }"
+        [icon]="faCheck"
+      ></fa-icon>
+      <fa-icon
+        (click)="onEditTask(task)"
+        [ngStyle]="{ color: 'red' }"
+        [icon]="faEdit"
+      ></fa-icon>
+    </div>
   </h3>
-  <p>{{ task.day | date : "medium" }}</p>
+  <p [ngClass]="{ markedDone: markedDone }">{{ task.day | date : "medium" }}</p>
 </div>

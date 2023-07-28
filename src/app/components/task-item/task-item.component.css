@@ -14,3 +14,14 @@
     align-items: center;
     justify-content: space-between;
 }
+
+.markedDone {
+    text-decoration: line-through;
+}
+
+.icons {
+    display: flex;
+    flex-direction: column;
+    row-gap: .5rem;
+    font-size: medium;
+}

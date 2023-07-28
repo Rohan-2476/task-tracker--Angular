@@ -3,4 +3,5 @@ export interface Task {
   title: string;
   day: string;
   reminder: boolean;
+  isDone: boolean;
 }
